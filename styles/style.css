@@ -3,6 +3,10 @@
   --color-accent: hsl(277, 64%, 61%);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: hsl(233, 47%, 7%);
   padding: 90px 25px;
@@ -17,6 +21,8 @@ body {
 
 .Card {
   width: var(--card-mobile-width);
+  display: flex;
+  flex-direction: column;
   background-color: hsl(244, 38%, 16%);
   border-radius: 8px;
   overflow: hidden;
@@ -45,6 +51,8 @@ body {
 
 .Card-body {
   padding: 35px;
+  display: flex;
+  flex-direction: column;
 }
 .Card-body h1 {
   margin: 0;
@@ -83,4 +91,33 @@ body {
 }
 .Attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .Card {
+    flex-direction: row;
+    width: 1110px;
+    height: 446px;
+    text-align: left;
+  }
+
+  .Card-body {
+    order: 1;
+    width: 570px;
+    padding: 70px 120px 70px 70px;
+  }
+  .Card-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .Card-headerImg {
+    order: 2;
+    width: 540px;
+    height: 100%;
+    background-image: url('/images/image-header-desktop.jpg');
+  }
 }
